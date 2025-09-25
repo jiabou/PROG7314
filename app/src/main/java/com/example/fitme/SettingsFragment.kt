@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fitme.databinding.FragmentCamaraBinding
+import com.example.fitme.databinding.FragmentSettingsBinding
 
-class Camara_Fragment : Fragment() {
-    private var _binding: FragmentCamaraBinding? = null
-    private val binding: FragmentCamaraBinding get() = _binding!!
+
+class SettingsFragment : Fragment() {
+    private var _binding: FragmentSettingsBinding? = null
+    private val binding: FragmentSettingsBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +18,7 @@ class Camara_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentCamaraBinding.inflate(inflater,container,false)
+        _binding = FragmentSettingsBinding.inflate(inflater,container,false)
 
         return _binding?.root
     }

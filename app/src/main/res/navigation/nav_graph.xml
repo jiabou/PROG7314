@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/home_Fragment"
-        android:name="com.example.fitme.Home_Fragment"
+        android:name="com.example.fitme.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/progress_Fragment"
-        android:name="com.example.fitme.Progress_Fragment"
+        android:name="com.example.fitme.ProgressFragment"
         android:label="fragment_progress"
         tools:layout="@layout/fragment_progress" />
     <fragment
         android:id="@+id/camara_Fragment"
-        android:name="com.example.fitme.Camara_Fragment"
+        android:name="com.example.fitme.CamaraFragment"
         android:label="fragment_camara"
         tools:layout="@layout/fragment_camara" />
     <fragment
         android:id="@+id/search_Fragment"
-        android:name="com.example.fitme.Search_Fragment"
+        android:name="com.example.fitme.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/profile_Fragment"
-        android:name="com.example.fitme.Profile_Fragment"
+        android:name="com.example.fitme.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

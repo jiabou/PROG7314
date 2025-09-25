@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fitme.databinding.FragmentSettingsBinding
+import com.example.fitme.databinding.FragmentHomeBinding
 
-
-class Settings_Fragment : Fragment() {
-    private var _binding: FragmentSettingsBinding? = null
-    private val binding: FragmentSettingsBinding get() = _binding!!
+class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding: FragmentHomeBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,7 +17,7 @@ class Settings_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSettingsBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         return _binding?.root
     }
@@ -34,4 +33,5 @@ class Settings_Fragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

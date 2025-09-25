@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fitme.databinding.FragmentHomeBinding
+import com.example.fitme.databinding.FragmentSearchBinding
 
-class Home_Fragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
-    private val binding: FragmentHomeBinding get() = _binding!!
+class SearchFragment : Fragment() {
+    private var _binding: FragmentSearchBinding? = null
+    private val binding: FragmentSearchBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +17,7 @@ class Home_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentSearchBinding.inflate(inflater,container,false)
 
         return _binding?.root
     }
@@ -33,5 +33,4 @@ class Home_Fragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

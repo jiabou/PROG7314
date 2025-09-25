@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fitme.databinding.FragmentProgressBinding
+import com.example.fitme.databinding.FragmentCamaraBinding
 
-
-class Progress_Fragment : Fragment() {
-    private var _binding: FragmentProgressBinding? = null
-    private val binding: FragmentProgressBinding get() = _binding!!
+class CamaraFragment : Fragment() {
+    private var _binding: FragmentCamaraBinding? = null
+    private val binding: FragmentCamaraBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,7 +17,7 @@ class Progress_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentProgressBinding.inflate(inflater,container,false)
+        _binding = FragmentCamaraBinding.inflate(inflater,container,false)
 
         return _binding?.root
     }

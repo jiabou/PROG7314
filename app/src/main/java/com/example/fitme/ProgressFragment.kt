@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fitme.databinding.FragmentProfileBinding
+import com.example.fitme.databinding.FragmentProgressBinding
 
-class Profile_Fragment : Fragment() {
-    private var _binding: FragmentProfileBinding? = null
-    private val binding: FragmentProfileBinding get() = _binding!!
+
+class ProgressFragment : Fragment() {
+    private var _binding: FragmentProgressBinding? = null
+    private val binding: FragmentProgressBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,7 +18,7 @@ class Profile_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentProfileBinding.inflate(inflater,container,false)
+        _binding = FragmentProgressBinding.inflate(inflater,container,false)
 
         return _binding?.root
     }
