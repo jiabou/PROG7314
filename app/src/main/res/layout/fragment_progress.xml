@@ -135,13 +135,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical"
-                    android:weightSum="1">
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
+                        android:layout_weight="1"
                         android:text="Today's Intake"
                         android:textStyle="bold"
                         android:textSize="16sp"
@@ -149,14 +148,25 @@
 
                     <TextView
                         android:id="@+id/tvTotalCalories"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
-                        android:gravity="end"
+                        android:layout_marginEnd="8dp"
                         android:text="Total: 916"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="@android:color/black" />
+
+                    <Button
+                        android:id="@+id/btnAddIntake"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add +"
+                        android:textSize="13sp"
+                        android:backgroundTint="@color/background_red"
+                        android:textColor="@android:color/white"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"/>
                 </LinearLayout>
 
                 <!-- Food List -->
