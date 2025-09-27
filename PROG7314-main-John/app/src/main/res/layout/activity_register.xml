@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EC8688"
+    tools:context=".Register">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vwMainRegister"
+                android:layout_width="377dp"
+                android:layout_height="632dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/rounded_view"
+                app:layout_constraintTop_toBottomOf="@+id/registerToolbar" />
+
+            <EditText
+                android:id="@+id/edtUsernameRegister"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="52dp"
+                android:ems="10"
+                android:hint="Enter Username"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toTopOf="@+id/vwMainRegister" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Enter Email Address"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtUsernameRegister" />
+
+            <EditText
+                android:id="@+id/edtHeight"
+                android:layout_width="130dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Height(cm)"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+            <EditText
+                android:id="@+id/edtWeight"
+                android:layout_width="130dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="39dp"
+                android:ems="10"
+                android:hint="Weight(kg)"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+            <EditText
+                android:id="@+id/edtDOB"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Date of Birth"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtHeight" />
+
+            <EditText
+                android:id="@+id/edtPhoneNumber"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Enter Phone Number"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtDOB" />
+
+            <EditText
+                android:id="@+id/edtNewPassword"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="24dp"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtPhoneNumber" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="300dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/main_background_red"
+                android:text="Register"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/edtNewPassword" />
+
+            <TextView
+                android:id="@+id/txtBackToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="53dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Already have an account? Login"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainRegister"
+                app:layout_constraintStart_toStartOf="@+id/vwMainRegister"
+                app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/registerToolbar"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:background="@color/background_red"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="@android:color/white">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Register"
+                    android:textColor="@android:color/white"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <Button
+                android:id="@+id/btnBackToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                android:text="<Back"
+                app:backgroundTint="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

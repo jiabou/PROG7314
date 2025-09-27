@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EC8688"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    tools:context=".Login">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vwMainLogin"
+                android:layout_width="331dp"
+                android:layout_height="612dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+
+            <TextView
+                android:id="@+id/txtLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="88dp"
+                android:text="LOG IN"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="250dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="208dp"
+                android:backgroundTint="@color/main_background_red"
+                android:text="Continue"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainLogin"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toTopOf="@+id/vwMainLogin" />
+
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="Enter Username"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainLogin"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toTopOf="@+id/vwMainLogin" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:importantForAccessibility="yes"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainLogin"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+            <View
+                android:id="@+id/vwLine2"
+                android:layout_width="120dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="104dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+            <View
+                android:id="@+id/vwLine1"
+                android:layout_width="120dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="104dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+            <TextView
+                android:id="@+id/txtOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:text="OR"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/vwLine2"
+                app:layout_constraintStart_toEndOf="@+id/vwLine1"
+                app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+            <ImageButton
+                android:id="@+id/btnSSO"
+                android:layout_width="262dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="A"
+                android:scaleType="center"
+                android:scaleX=".5"
+                android:scaleY=".5"
+                app:layout_constraintEnd_toEndOf="@+id/vwLine2"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toBottomOf="@+id/txtOr"
+                app:srcCompat="@drawable/sso" />
+
+            <TextView
+                android:id="@+id/txtRegisterLink"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="44dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Register?"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/vwMainLogin"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toBottomOf="@+id/btnSSO" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/CaloriesToolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/background_red"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:title="Welcome to FitME"
+                app:titleCentered="true"
+                app:titleTextColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="28dp"
+                android:text="Username:"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toTopOf="@+id/vwMainLogin" />
+
+            <TextView
+                android:id="@+id/txtPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="12dp"
+                android:text="Password:"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/vwMainLogin"
+                app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
