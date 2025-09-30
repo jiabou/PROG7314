@@ -141,18 +141,20 @@
                         android:layout_marginBottom="20dp"/>
 
                     <!-- Register button -->
+
+                    <!-- Already have account link -->
+
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_background_framed"
                         android:text="Register"
                         android:textColor="@android:color/white"
-                        app:backgroundTint="@null"
-                        android:background="@drawable/bg_background_framed"
                         android:textStyle="bold"
-                        android:layout_marginTop="30dp"/>
+                        app:backgroundTint="@null" />
 
-                    <!-- Already have account link -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
