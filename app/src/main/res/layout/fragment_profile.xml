@@ -161,7 +161,7 @@
     <LinearLayout
         android:id="@+id/sectionImages"
         android:layout_width="match_parent"
-        android:layout_height="333dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/main_background_red"
         android:orientation="vertical"
@@ -185,6 +185,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        android:name="androidx.navigation.material.BottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

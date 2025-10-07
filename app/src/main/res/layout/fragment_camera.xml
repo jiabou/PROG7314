@@ -44,6 +44,7 @@ tools:context=".CameraFragment">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        android:name="androidx.navigation.material.BottomNavigationView"
         android:layout_width="390dp"
         android:layout_height="86dp"
         app:layout_constraintBottom_toBottomOf="parent"
