@@ -21,13 +21,13 @@
         android:label="fragment_camara"
         tools:layout="@layout/fragment_camara" />
     <fragment
-        android:id="@+id/search_Fragment"
-        android:name="com.example.fitme.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
-    <fragment
         android:id="@+id/profile_Fragment"
         android:name="com.example.fitme.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/intake_Fragment"
+        android:name="com.example.fitme.AddIntake"
+        android:label="intake_fragment"
+        tools:layout="@layout/fragment_add_intake"/>
 </navigation>

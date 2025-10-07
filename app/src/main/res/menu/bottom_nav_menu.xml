@@ -17,7 +17,7 @@
         />
 
     <item android:id="@+id/search_Fragment"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_food"
         android:title=""
         />
     <item
