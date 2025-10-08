@@ -2,7 +2,6 @@
 		                  	FitMe
 --------------------------------------------------------
 
-
 #Github Link:
 
  https://github.com/jiabou/PROG7314.git
@@ -74,7 +73,7 @@ Prerequisites:
 Installation:
 
  -Clone the repository
-   git clone https://github.com/jiabou/PROG7314.git
+   git clone https://github.com/jiabou/PROG7314.git (main branch only)
    
  -Open Android Studio
  
