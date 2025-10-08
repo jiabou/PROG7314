@@ -42,6 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AboutUs" />
+        <activity android:name=".PasswordChange" />
+        <activity android:name=".PrivacyPolicy" />
+        <activity android:name=".ProfileEditor" />
+        <activity android:name=".TermsAndConditions" />
+
     </application>
 
 </manifest>

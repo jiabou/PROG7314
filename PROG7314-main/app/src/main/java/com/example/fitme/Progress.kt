@@ -86,32 +86,9 @@ class Progress : AppCompatActivity() {
     }
 
     private fun displayFoodList(foodList: List<FoodIntake>) {
-        val container = binding.foodListRecyclerView // a LinearLayout container
-        container.removeAllViews()
-
-        for (food in foodList) {
-            val itemLayout = LinearLayout(this).apply {
-                orientation = LinearLayout.HORIZONTAL
-                setPadding(16, 8, 16, 8)
-            }
-
-            val nameView = TextView(this).apply {
-                text = food.foodName
-                textSize = 16f
-                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
-            }
-
-            val caloriesView = TextView(this).apply {
-                text = "${food.calories} kcal"
-                textSize = 16f
-                setTextColor(Color.DKGRAY)
-            }
-
-            itemLayout.addView(nameView)
-            itemLayout.addView(caloriesView)
-            container.addView(itemLayout)
-        }
+        binding.foodListRecyclerView.adapter = FoodIntakeAdapter(foodList)
     }
+
 
     private fun drawLineChart(days: List<String>, calories: List<Int>) {
         val lineChart: LineChart = binding.lineChart

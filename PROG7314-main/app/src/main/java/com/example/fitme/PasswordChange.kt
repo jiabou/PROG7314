@@ -41,6 +41,10 @@ class PasswordChange : AppCompatActivity() {
         toolbar = findViewById(R.id.changePasswordToolbar)
 
         setupListeners()
+
+        val toolbar = findViewById<Toolbar>(R.id.changePasswordToolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setupListeners() {
@@ -84,6 +88,11 @@ class PasswordChange : AppCompatActivity() {
             etConfirmPassword.error = "Passwords do not match"
             return false
         }
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
         return true
     }
 }
