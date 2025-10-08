@@ -2,9 +2,11 @@
 		                  	FitMe
 --------------------------------------------------------
 
+
 #Github Link:
 
  https://github.com/jiabou/PROG7314.git
+
 
 #Video Link:
 
@@ -18,9 +20,11 @@
  
  Seth Naidoo	- ST10209811
 
+
 #Application Status:
 
  In-development
+
 
 #Discription
 
@@ -32,6 +36,7 @@
  and become the best version of yourself.Our mission is to make fitness simple, 
  accessible, and rewarding for everyone.
 
+
 #Features:
 
  Register - Users are able to create an account which is then stored and retrieved from a database.
@@ -40,6 +45,7 @@
  View Intakes - The user may view all intakes in a display list after being entered.
  Search Intakes - Users may search specific intakes by using the name of the drink/food.
  Track Daily Intakes - The total calories of all intakes gets stored, tracked and then displayed.
+
 
 #Overview:
 
@@ -50,6 +56,7 @@
  Profile and About us. The Change Password and Edit Profile pages allows users to change the details they originally registered
  when they created the account. 
 
+
 Prerequisites:
 
 - Android Studio (latest version recommended)
@@ -57,6 +64,7 @@ Prerequisites:
 - Android SDK
   
 - Java or Kotlin 
+
 
 Installation:
 
