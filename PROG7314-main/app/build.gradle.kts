@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "2.0.21-1.0.25"
 }
 
 android {
@@ -51,7 +53,32 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.mpandroidchart)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    // Room runtime
+    implementation(libs.androidx.room.runtime)
+
+    // Kotlin extensions + Coroutines support
+    implementation(libs.androidx.room.ktx)
+
+    // Annotation processor (Java)
+    annotationProcessor(libs.androidx.room.compiler)
+
+    // ksp for Kotlin
+    ksp(libs.androidx.room.compiler.v281)
+
+    // (Optional) Testing Room
+    testImplementation(libs.androidx.room.testing)
+
+    //Retrofit:
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }

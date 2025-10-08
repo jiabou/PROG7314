@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.launch
-import android.widget.Toast
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,12 +33,13 @@ class Home : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                R.id.nav_camara -> {
-                    //Implement later...
+                R.id.nav_camera -> {
+                    val intent = Intent(this, Camera::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_search -> {
-                    val intent = Intent(this, Intake::class.java)
+                    val intent = Intent(this, AddIntake::class.java)
                     startActivity(intent)
                     true
                 }

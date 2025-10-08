@@ -1,56 +1,175 @@
 package com.example.fitme
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.example.fitme.databinding.ActivityProgressBinding
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import kotlinx.coroutines.launch
 
 class Progress : AppCompatActivity() {
+
+    private lateinit var binding: ActivityProgressBinding
+    private lateinit var foodIntakeDao: FoodIntakeDao
+
+    private val viewModel: ProgressViewModel by lazy {
+        val factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return ProgressViewModel(foodIntakeDao) as T
+            }
+        }
+        ViewModelProvider(this, factory)[ProgressViewModel::class.java]
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_progress)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        binding = ActivityProgressBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Apply system bar insets for edge-to-edge
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        //Bottom Navigation View:
-        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        // Initialize DB
+        foodIntakeDao = FitMeDatabase.getDatabase(this).foodIntakeDao()
+
+        // Observe and load data
+        observeViewModel()
+        viewModel.onEvent(ProgressEvent.LoadProgressData)
+
+        // Handle add intake button
+        binding.btnAddIntake.setOnClickListener {
+            val intent = Intent(this, AddIntake::class.java)
+            startActivity(intent)
+        }
+
+        setupBottomNavigation()
+    }
+
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            viewModel.state.collect { state ->
+                binding.tvCaloriesValue.text = "${state.totalCalories} Cals"
+                binding.progressCalories.progress = state.totalCalories
+                binding.tvTotalCalories.text = "Total: ${state.totalCalories}"
+
+                // Display list
+                displayFoodList(state.todayIntake)
+
+                // Draw line chart
+                drawLineChart(state.days, state.weeklyCalories)
+
+                // Show error (if any)
+                state.errorMessage?.let {
+                    Toast.makeText(this@Progress, it, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun displayFoodList(foodList: List<FoodIntake>) {
+        val container = binding.foodListRecyclerView // a LinearLayout container
+        container.removeAllViews()
+
+        for (food in foodList) {
+            val itemLayout = LinearLayout(this).apply {
+                orientation = LinearLayout.HORIZONTAL
+                setPadding(16, 8, 16, 8)
+            }
+
+            val nameView = TextView(this).apply {
+                text = food.foodName
+                textSize = 16f
+                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+            }
+
+            val caloriesView = TextView(this).apply {
+                text = "${food.calories} kcal"
+                textSize = 16f
+                setTextColor(Color.DKGRAY)
+            }
+
+            itemLayout.addView(nameView)
+            itemLayout.addView(caloriesView)
+            container.addView(itemLayout)
+        }
+    }
+
+    private fun drawLineChart(days: List<String>, calories: List<Int>) {
+        val lineChart: LineChart = binding.lineChart
+        val entries = calories.mapIndexed { index, value ->
+            Entry(index.toFloat(), value.toFloat())
+        }
+
+        val dataSet = LineDataSet(entries, "Calorie Intake").apply {
+            color = Color.RED
+            valueTextColor = Color.BLACK
+            lineWidth = 2f
+            circleRadius = 4f
+            setCircleColor(Color.RED)
+            setDrawValues(false)
+        }
+
+        val lineData = LineData(dataSet)
+        lineChart.data = lineData
+
+        val xAxis = lineChart.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.valueFormatter = com.github.mikephil.charting.formatter.IndexAxisValueFormatter(days)
+        xAxis.setDrawGridLines(false)
+        xAxis.labelRotationAngle = -45f
+        xAxis.textColor = Color.BLACK
+
+        lineChart.axisLeft.textColor = Color.BLACK
+        lineChart.axisRight.isEnabled = false
+        lineChart.description.isEnabled = false
+        lineChart.legend.isEnabled = false
+        lineChart.invalidate()
+    }
+
+    private fun setupBottomNavigation() {
+        val bottomNavigation = binding.bottomNavigationView
+        bottomNavigation.selectedItemId = R.id.nav_progress
 
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    val intent = Intent(this, Home::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, Home::class.java))
                     true
                 }
-                R.id.nav_progress -> {
-                    //No action needed already on Progress
-                    true
-                }
-                R.id.nav_camara -> {
-                    //Implement later...
+                R.id.nav_progress -> true
+                R.id.nav_camera -> {
+                    startActivity(Intent(this, AddIntake::class.java))
                     true
                 }
                 R.id.nav_search -> {
-                    val intent = Intent(this, Intake::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, AddIntake::class.java))
                     true
                 }
                 R.id.nav_profile -> {
-                    val intent = Intent(this, Profile::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this, Profile::class.java))
                     true
                 }
                 else -> false
             }
         }
-
-        bottomNavigation.selectedItemId = R.id.nav_progress
     }
 }

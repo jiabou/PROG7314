@@ -1,9 +1,7 @@
 package com.example.fitme
 
 import android.content.Intent
-import android.media.audiofx.Virtualizer
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -47,12 +45,13 @@ class Profile : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                R.id.nav_camara -> {
-                    //Implement later...
+                R.id.nav_camera -> {
+                    val intent = Intent(this, Camera::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_search -> {
-                    val intent = Intent(this, Intake::class.java)
+                    val intent = Intent(this, AddIntake::class.java)
                     startActivity(intent)
                     true
                 }
