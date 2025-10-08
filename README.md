@@ -13,7 +13,9 @@
 #Authors and acknowledgment:
 
  John Eybers 	- ST10379457
+ 
  Mohau Menytsoe	- ST10334992
+ 
  Seth Naidoo	- ST10209811
 
 #Application Status:
