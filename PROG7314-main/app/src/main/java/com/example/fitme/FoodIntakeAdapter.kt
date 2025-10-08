@@ -28,3 +28,8 @@ class FoodIntakeAdapter(private val items: List<FoodIntake>) :
 
     override fun getItemCount(): Int = items.size
 }
+
+/*
+Reference list:
+To Do List App using Recycler View Android Studio Kotlin Example Tutorial. 2022. YouTube video, added by Code With Cal. [Online]. Available at: https://www.youtube.com/watch?v=RfIR4oaSVfQ [Accessed 20 September 2025].
+ */

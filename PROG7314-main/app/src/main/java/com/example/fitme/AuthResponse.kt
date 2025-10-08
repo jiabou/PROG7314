@@ -8,3 +8,7 @@ data class AuthResponse(
     val createdAt: String? = null,
     val updatedAt: String? = null
 )
+/*
+Reference list:
+Retrofit Android Tutorial - Make API Calls. 2023. YouTube video, added by Ahmed Guedmioui. [Online]. Available at: https://www.youtube.com/watch?v=8IhNq0ng-wk [Accessed 29 September 2025].
+ */

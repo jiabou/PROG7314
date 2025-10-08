@@ -24,15 +24,6 @@ class PasswordChange : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_password_change)
 
-        // Edge-to-edge padding setup
-        /*
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        */
-
         // Initialize views
         etCurrentPassword = findViewById(R.id.etCurrentPassword)
         etNewPassword = findViewById(R.id.etNewPassword)
@@ -96,3 +87,7 @@ class PasswordChange : AppCompatActivity() {
         return true
     }
 }
+/*
+Reference list:
+The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android. 2023. YouTube video, added by Philipp Lackner. [Online]. Available at: https://www.youtube.com/watch?v=bOd3wO0uFr8 [Accessed 22 September 2025].
+ */

@@ -31,7 +31,6 @@ class Register : AppCompatActivity() {
         ViewModelProvider(this, factory)[UserViewModel::class.java]
     }
 
-    // variable to store selected date
     private var dob: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,7 +81,7 @@ class Register : AppCompatActivity() {
         }
     }
 
-    // 📅 DatePickerDialog logic
+    // DatePickerDialog
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val datePickerDialog = DatePickerDialog(
@@ -130,7 +129,7 @@ class Register : AppCompatActivity() {
         }
     }
 
-    // TextWatcher helper
+    // TextWatcher
     private fun android.widget.EditText.onTextChanged(listener: (String) -> Unit) {
         this.addTextChangedListener(object : android.text.TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -141,3 +140,11 @@ class Register : AppCompatActivity() {
         })
     }
 }
+/*
+Reference list:
+The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android. 2023. YouTube video, added by Philipp Lackner. [Online]. Available at: https://www.youtube.com/watch?v=bOd3wO0uFr8 [Accessed 22 September 2025].
+Retrofit Android Tutorial - Make API Calls. 2023. YouTube video, added by Ahmed Guedmioui. [Online]. Available at: https://www.youtube.com/watch?v=8IhNq0ng-wk [Accessed 29 September 2025].
+To Do List App using Recycler View Android Studio Kotlin Example Tutorial. 2022. YouTube video, added by Code With Cal. [Online]. Available at: https://www.youtube.com/watch?v=RfIR4oaSVfQ [Accessed 20 September 2025].
+Bottom Navigation Bar - Android Studio | Fragments | Kotlin | 2023. 2023. YouTube video, added by Foxandroid. [Online]. Available at: https://www.youtube.com/watch?v=L_6poZGNXOo [Accessed 20 September 2025].
+Date Picker Dialog on Android. 2019. YouTube video, added by CodingWithMitch. [Online]. Available at: https://www.youtube.com/watch?v=AdTzD96AhE0 [Accessed 29 September 2025].
+ */

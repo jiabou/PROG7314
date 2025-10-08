@@ -11,3 +11,7 @@ sealed interface UserEvent {
     data class setPassword(val password: String) : UserEvent
     data class deleteUser(val user: User) : UserEvent
 }
+/*
+Reference list:
+The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android. 2023. YouTube video, added by Philipp Lackner. [Online]. Available at: https://www.youtube.com/watch?v=bOd3wO0uFr8 [Accessed 22 September 2025].
+ */

@@ -55,3 +55,7 @@ class Home : AppCompatActivity() {
         bottomNavigation.selectedItemId = R.id.nav_home
     }
 }
+/*
+Reference list:
+Bottom Navigation Bar - Android Studio | Fragments | Kotlin | 2023. 2023. YouTube video, added by Foxandroid. [Online]. Available at: https://www.youtube.com/watch?v=L_6poZGNXOo [Accessed 20 September 2025].
+ */

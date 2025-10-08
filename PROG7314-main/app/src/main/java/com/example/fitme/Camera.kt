@@ -63,7 +63,6 @@ class Camera : AppCompatActivity() {
         // Automatically open the camera when activity loads
         openCamera()
 
-        // Optional: If you have a button in activity_camera.xml to reopen the camera
         val btnOpenCamera = findViewById<Button?>(R.id.btnOpenCamera)
         btnOpenCamera?.setOnClickListener {
             openCamera()
@@ -81,15 +80,18 @@ class Camera : AppCompatActivity() {
         }
     }
 
-    // Handle the captured image (optional)
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            // Example: show a Toast when the picture is taken
+
             Toast.makeText(this, "Picture captured successfully!", Toast.LENGTH_SHORT).show()
-            // You can extract the image from data?.extras?.get("data") if needed
         }
     }
 }
+/*
+Reference list:
+The FULL Beginner Guide for Room in Android | Local Database Tutorial for Android. 2023. YouTube video, added by Philipp Lackner. [Online]. Available at: https://www.youtube.com/watch?v=bOd3wO0uFr8 [Accessed 22 September 2025].
+Bottom Navigation Bar - Android Studio | Fragments | Kotlin | 2023. 2023. YouTube video, added by Foxandroid. [Online]. Available at: https://www.youtube.com/watch?v=L_6poZGNXOo [Accessed 20 September 2025].
+ */

@@ -19,3 +19,7 @@ interface AuthApi {
     @POST("/api/addFood")
     fun addFood(@Body food: AuthResponse): Call<AuthResponse>
 }
+/*
+Reference list:
+Retrofit Android Tutorial - Make API Calls. 2023. YouTube video, added by Ahmed Guedmioui. [Online]. Available at: https://www.youtube.com/watch?v=8IhNq0ng-wk [Accessed 29 September 2025].
+ */
